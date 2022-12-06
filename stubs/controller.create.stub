@@ -1,0 +1,39 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Controller;
+use {{ rootNamespace }}Http\Requests\{{ model }}s\StoreRequest;
+use {{ namespacedModel }};
+use Illuminate\Http\RedirectResponse;
+use Inertia\Response;
+
+/**
+ * Class {{ class }}
+ *
+ * @package {{ namespace }}
+ */
+class {{ class }} extends Controller
+{
+    /**
+     * @return Response
+     */
+    public function __invoke(): Response
+    {
+        return inertia('{{ modelVariable }}s/create');
+    }
+
+    /**
+     * @param StoreRequest $request
+     * @return RedirectResponse
+     */
+    public function store(StoreRequest $request): RedirectResponse
+    {
+        ${{ modelVariable }} = {{ model }}::create($request->validated());
+        flash()->success(__('{{ model }} saved.'));
+
+        return to_route('{{ modelVariable }}s.details', ${{ modelVariable }});
+    }
+}

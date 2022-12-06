@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Models;
+
+use App\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+/**
+ * Class {{ class }}
+ *
+ * @package App\Models
+ * @property string $name
+ */
+class {{ class }} extends Model
+{
+    use HasFactory;
+
+    public const TABLE = '{{ class }}s';
+    public const ATTRIBUTE_NAME = 'name';
+
+    /**
+     * @var string[]
+     */
+    protected $fillable = [
+        self::ATTRIBUTE_NAME,
+    ];
+}

@@ -1,0 +1,15 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~boxicons/css/boxicons.min.css';
+
+.page-title {
+  display: flex;
+  margin-bottom: $spacer;
+  justify-content: space-between;
+}
+
+.form-group,
+.form-floating,
+.form-check {
+  margin-bottom: $spacer;
+}

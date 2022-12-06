@@ -1,2 +1,3 @@
-# saas-boilerplate
-laravel boilerplate with laravel cashier
+## SaaS Boilerplate
+
+Improved Laravel with installed and preconfigured Laravel Cashier

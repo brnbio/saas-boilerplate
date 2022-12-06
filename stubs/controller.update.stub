@@ -1,0 +1,40 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Controller;
+use {{ rootNamespace }}Http\Requests\{{ model }}s\UpdateRequest;
+use {{ namespacedModel }};
+use Illuminate\Http\RedirectResponse;
+use Inertia\Response;
+
+/**
+ * Class {{ class }}
+ *
+ * @package {{ namespace }}
+ */
+class {{ class }} extends Controller
+{
+    /**
+     * @return Response
+     */
+    public function __invoke({{ model }} ${{ modelVariable }}): Response
+    {
+        return inertia('{{ modelVariable }}s/update', compact('{{ modelVariable }}'));
+    }
+
+    /**
+     * @param UpdateRequest $request
+     * @param {{ model }} ${{ modelVariable }}
+     * @return RedirectResponse
+     */
+    public function store(UpdateRequest $request, {{ model }} ${{ modelVariable }}): RedirectResponse
+    {
+        ${{ modelVariable }}->update($request->validated());
+        flash()->success(__('{{ model }} saved.'));
+
+        return to_route('{{ modelVariable }}s.details', ${{ modelVariable }});
+    }
+}
