@@ -36,6 +36,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <DropdownItem :href="route('account')">Account</DropdownItem>
+                            <DropdownItem :href="route('billing')">Billing</DropdownItem>
                             <li><hr class="dropdown-divider"></li>
                             <DropdownItem :href="route('logout')" method="post" as="button">Logout</DropdownItem>
                         </ul>

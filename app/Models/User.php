@@ -18,6 +18,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Cashier\Billable;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
@@ -38,6 +39,7 @@ class User extends Model implements
 {
     use Authenticatable;
     use Authorizable;
+    use Billable;
     use CanResetPassword;
     use HasApiTokens;
     use HasFactory;

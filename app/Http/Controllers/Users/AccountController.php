@@ -36,6 +36,9 @@ class AccountController extends Controller
         }
         unset($data['new_password']);
         user()->update($data);
+        if (user()->hasStripeId()) {
+            user()->syncStripeCustomerDetails();
+        }
         flash()->success('Account saved.');
 
         return back();

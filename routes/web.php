@@ -32,4 +32,5 @@ Route::middleware(['auth', 'verified'])->group(function() {
     Route::get ('/', Controllers\HomeController::class)->name('home');
     Route::get ('/password/confirm', Controllers\Users\ConfirmPasswordController::class)->name('password.confirm');
     Route::post('/password/confirm', [Controllers\Users\ConfirmPasswordController::class, 'confirm']);
+    Route::get ('/billing', Controllers\Users\BillingController::class)->name('billing');
 });

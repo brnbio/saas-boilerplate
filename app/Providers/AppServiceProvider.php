@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Model;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Cashier\Cashier;
 
 /**
  * Class AppServiceProvider
@@ -28,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Model::shouldBeStrict(!app()->isProduction());
+        Cashier::calculateTaxes();
     }
 }
